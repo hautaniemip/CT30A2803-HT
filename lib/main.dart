@@ -19,8 +19,21 @@ class MyApp extends StatelessWidget {
         Button(label: 'Source', color: Colors.grey, secondaryColor: Colors.lightGreen,),
         Button(label: 'Settings', color: Colors.grey, secondaryColor: Colors.lightGreen,),
         Padding(padding: EdgeInsets.all(16)),
-        Button(label: 'System shutdown', color: Colors.redAccent, secondaryColor: Colors.greenAccent,),
+        Button(label: 'System shutdown', secondaryLabel: 'System startup', color: Colors.redAccent, secondaryColor: Colors.greenAccent,),
       ],
+    );
+
+    Widget mainSection = Flexible(
+      fit: FlexFit.tight,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [
+          Text(
+            'Hello World!',
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
     );
     
     return MaterialApp(
@@ -35,30 +48,9 @@ class MyApp extends StatelessWidget {
         body: Row(
           children: [
             menuSection,
+            mainSection,
           ],
         )
-      ),
-    );
-  }
-
-  Padding buildButton(Color color, String label, double width, double height, double padding) {
-    return Padding(
-      padding: EdgeInsets.all(padding),
-      child: InkWell(
-        onTap: () {
-          print("Container clicked");
-        },
-        child: Ink(
-          color: color,
-          width: width,
-          height: height,
-          child: Center(
-            child: Text(
-              label,
-              textAlign: TextAlign.center,
-            ),
-          ),
-        ),
       ),
     );
   }
@@ -68,19 +60,23 @@ class Button extends StatefulWidget {
   const Button({
     Key? key,
     this.label = '',
+    this.secondaryLabel,
     this.width = 100,
     this.height = 100,
     this.padding = 16,
     this.color = Colors.white10,
-    this.secondaryColor
+    this.secondaryColor,
+    this.onTap,
   }) : super(key: key);
 
   final String label;
+  final String? secondaryLabel;
   final double width;
   final double height;
   final double padding;
   final Color color;
   final Color? secondaryColor;
+  final ValueChanged<bool>? onTap;
 
   @override
   ButtonState createState() => ButtonState();
@@ -92,6 +88,9 @@ class ButtonState extends State<Button> {
   void handleTap() {
     setState(() {
       active = !active;
+      if (widget.onTap != null) {
+        widget.onTap!(active);
+      }
     });
   }
 
@@ -107,7 +106,7 @@ class ButtonState extends State<Button> {
           height: widget.height,
           child: Center(
             child: Text(
-              widget.label,
+              active ? widget.label : (widget.secondaryLabel ?? widget.label),
               textAlign: TextAlign.center,
             ),
           ),
