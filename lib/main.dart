@@ -61,6 +61,7 @@ class Button extends StatefulWidget {
     Key? key,
     this.label = '',
     this.secondaryLabel,
+    this.icon,
     this.width = 100,
     this.height = 100,
     this.padding = 16,
@@ -71,6 +72,7 @@ class Button extends StatefulWidget {
 
   final String label;
   final String? secondaryLabel;
+  final IconData? icon;
   final double width;
   final double height;
   final double padding;
@@ -104,11 +106,18 @@ class ButtonState extends State<Button> {
           color: active ? widget.color : (widget.secondaryColor ?? widget.color),
           width: widget.width,
           height: widget.height,
-          child: Center(
-            child: Text(
-              active ? widget.label : (widget.secondaryLabel ?? widget.label),
-              textAlign: TextAlign.center,
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children:  [
+              if (widget.icon != null)
+                Icon(widget.icon),
+              if (widget.label != '')
+                Text(
+                  active ? widget.label : (widget.secondaryLabel ?? widget.label),
+                  textAlign: TextAlign.center,
+                ),
+            ],
           ),
         ),
       ),
