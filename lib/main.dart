@@ -170,12 +170,39 @@ class MyApp extends StatelessWidget {
       ],
     );
 
+    Widget settingsSection = Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: const [
+            Text('Default source'),
+            Dropdown(items: <String>['HDMI', 'DP', 'VGA', 'Share Screen'],),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: const [
+            Text('Default light mode'),
+            Dropdown(items: <String>['Dimmest', 'Dim', 'Bright', 'Brightest'],),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: const [
+            Text('Dark mode'),
+            DarkModeSwitch(),
+          ],
+        )
+      ],
+    );
+
     Widget mainSection = Flexible(
       fit: FlexFit.tight,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          sourceSection,
+          settingsSection,
         ],
       ),
     );
