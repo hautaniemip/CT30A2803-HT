@@ -23,6 +23,40 @@ class MyApp extends StatelessWidget {
       ],
     );
 
+    Widget homeSection = Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text(
+          'Panel Home View',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 60,
+          ),
+        ),
+        const Text(
+          'Current source: HDMI',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 40,
+          ),
+        ),
+        Container(
+          width: 960,
+          height: 540,
+          color: Colors.black,
+          child: const Center(
+            child: Text(
+              'NO SIGNAL',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+
     Widget mainSection = Flexible(
       fit: FlexFit.tight,
       child: Column(
