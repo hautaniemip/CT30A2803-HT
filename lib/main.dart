@@ -140,21 +140,31 @@ class MyApp extends StatelessWidget {
       ],
     );
 
-    Widget sourceSection = Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    Widget sourceSection = Column(
       children: [
-        Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
-            Button(label: 'HDMI', color: Colors.grey,),
-            Button(label: 'VGA', color: Colors.grey,),
-          ],
+        const Text(
+          'Source',
+          style: TextStyle(
+            fontSize: 60,
+          ),
         ),
-        Column(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
-            Button(label: 'DP', color: Colors.grey,),
-            Button(label: 'Share Screen', color: Colors.grey,),
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: const [
+                Button(label: 'HDMI', color: Colors.grey,),
+                Button(label: 'VGA', color: Colors.grey,),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: const [
+                Button(label: 'DP', color: Colors.grey,),
+                Button(label: 'Share Screen', color: Colors.grey,),
+              ],
+            ),
           ],
         ),
       ],
