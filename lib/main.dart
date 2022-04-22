@@ -57,19 +57,47 @@ class MyApp extends StatelessWidget {
       ],
     );
 
+    Widget projectorSection = Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text(
+          'Projector Controls',
+          style: TextStyle(
+            fontSize: 60,
+          ),
+        ),
+        const Button(label: 'Projector shutdown', secondaryLabel: 'Projector startup', color: Colors.redAccent, secondaryColor: Colors.greenAccent,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Button(label: 'Source', color: Colors.grey,),
+            Button(icon: Icons.keyboard_arrow_up, color: Colors.grey,),
+            Button(label: 'Menu', color: Colors.grey,),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Button(icon: Icons.keyboard_arrow_left, color: Colors.grey,),
+            Button(label: 'Select', color: Colors.grey,),
+            Button(icon: Icons.keyboard_arrow_right, color: Colors.grey,),
+          ],
+        ),
+        const Button(icon: Icons.keyboard_arrow_down, color: Colors.grey,),
+      ],
+    );
+
     Widget mainSection = Flexible(
       fit: FlexFit.tight,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Text(
-            'Hello World!',
-            textAlign: TextAlign.center,
-          ),
+        children: [
+          projectorSection,
         ],
       ),
     );
-    
+
+
     return MaterialApp(
       title: 'CT30A2803 LPR Group 6',
       theme: ThemeData(
