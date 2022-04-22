@@ -202,4 +202,33 @@ class ButtonState extends State<Button> {
   }
 }
 
+class LightSlider extends StatefulWidget {
+  const LightSlider({Key? key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() => LightSliderState();
+}
+
+class LightSliderState extends State<LightSlider> {
+  double currentValue = 20;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 600,
+      child: Slider(
+        value: currentValue,
+        max: 100,
+        divisions: 20,
+        label: currentValue.round().toString(),
+        onChanged: (double value) {
+          setState(() {
+            currentValue = value;
+          });
+        },
+      ),
+    );
+  }
+}
+
 
