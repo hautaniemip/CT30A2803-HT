@@ -140,14 +140,32 @@ class MyApp extends StatelessWidget {
       ],
     );
 
-
+    Widget sourceSection = Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: const [
+            Button(label: 'HDMI', color: Colors.grey,),
+            Button(label: 'VGA', color: Colors.grey,),
+          ],
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: const [
+            Button(label: 'DP', color: Colors.grey,),
+            Button(label: 'Share Screen', color: Colors.grey,),
+          ],
+        ),
+      ],
+    );
 
     Widget mainSection = Flexible(
       fit: FlexFit.tight,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          roomLightSection,
+          sourceSection,
         ],
       ),
     );
