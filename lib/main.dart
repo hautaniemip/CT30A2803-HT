@@ -87,6 +87,19 @@ class MyApp extends StatelessWidget {
       ],
     );
 
+    Widget screenSection = Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: const [
+        Text(
+          'Screen Controls',
+          style: ,
+        )
+        Button(icon: Icons.keyboard_arrow_up, color: Colors.grey,),
+        Button(label: 'STOP', color: Colors.grey,),
+        Button(icon: Icons.keyboard_arrow_down, color: Colors.grey,),
+      ],
+    );
+
     Widget mainSection = Flexible(
       fit: FlexFit.tight,
       child: Column(
