@@ -92,8 +92,10 @@ class MyApp extends StatelessWidget {
       children: const [
         Text(
           'Screen Controls',
-          style: ,
-        )
+          style: TextStyle(
+            fontSize: 60,
+          ),
+        ),
         Button(icon: Icons.keyboard_arrow_up, color: Colors.grey,),
         Button(label: 'STOP', color: Colors.grey,),
         Button(icon: Icons.keyboard_arrow_down, color: Colors.grey,),
