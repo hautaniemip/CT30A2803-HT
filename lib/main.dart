@@ -299,4 +299,51 @@ class LightSliderState extends State<LightSlider> {
   }
 }
 
+class Dropdown extends StatefulWidget {
+  const Dropdown({
+    Key? key,
+    this.items = const <String>['One', 'Two', 'Three'],
+  }) : super(key: key);
+
+  final List<String> items;
+
+  @override
+  State<StatefulWidget> createState() => DropdownState();
+}
+
+class DropdownState extends State<Dropdown> {
+  late String dropdownValue = widget.items[0];
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButton(
+      value: dropdownValue,
+      icon: const Icon(Icons.arrow_drop_down),
+      elevation: 16,
+      underline: Container(
+        height: 2,
+        color: Colors.black,
+      ),
+      onChanged: (String? newValue) {
+        setState(() {
+          dropdownValue = newValue!;
+        });
+      },
+      items: widget.items
+          .map<DropdownMenuItem<String>>((String value) {
+            return DropdownMenuItem<String>(
+              value: value,
+              child: Text(value),
+            );
+      }).toList(),
+    );
+  }
+}
+
+class DarkModeSwitch extends StatefulWidget {
+  const DarkModeSwitch({Key? key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() => DarkModeSwitchState();
+}
 
