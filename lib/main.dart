@@ -102,12 +102,52 @@ class MyApp extends StatelessWidget {
       ],
     );
 
+    Widget roomLightSection = Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text(
+          'Room Light Controls',
+          style: TextStyle(
+            fontSize: 60,
+          ),
+        ),
+        const Text(
+          'Manual control',
+          style: TextStyle(
+            fontSize: 30,
+          ),
+        ),
+        const LightSlider(),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Button(label: 'Dim', color: Colors.grey,),
+                Button(label: 'Dimmest', color: Colors.grey,),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Button(label: 'Bright', color: Colors.grey,),
+                Button(label: 'Brightest', color: Colors.grey,),
+              ],
+            )
+          ],
+        ),
+      ],
+    );
+
+
+
     Widget mainSection = Flexible(
       fit: FlexFit.tight,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          projectorSection,
+          roomLightSection,
         ],
       ),
     );
