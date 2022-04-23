@@ -31,110 +31,97 @@ class MenuSection extends State<CustomMainSection> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Flexible(
       child: Row(
-        
         children: [
-          Container( //Container for MenuButtons
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                TabButton(
-                  label: "HomePage",
-                  pageNumber: 0,
-                  selectedPage: _selectedPage,
-                   onTap: () {
-                    changePage(0);
-                  },
-                
-                ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              TabButton(
+                label: "HomePage",
+                color: Colors.grey,
+                secondaryColor: Colors.green,
+                pageNumber: 0,
+                selectedPage: _selectedPage,
+                 onTap: () {
+                  changePage(0);
+                },
 
-                TabButton(
-                  label: "Projector Controls",
-                  pageNumber: 1,
-                  selectedPage: _selectedPage,
-                  onTap: () {
-                    changePage(1);
-                  },
-                ),
+              ),
 
-                TabButton(
-                  label: "Screen controls",
-                  pageNumber: 2,
-                  selectedPage: _selectedPage,
-                  onTap: () {
-                    changePage(2);
-                  },
-                ),
+              TabButton(
+                label: "Projector Controls",
+                color: Colors.grey,
+                secondaryColor: Colors.green,
+                pageNumber: 1,
+                selectedPage: _selectedPage,
+                onTap: () {
+                  changePage(1);
+                },
+              ),
 
-                TabButton(
-                  label: "Room light control",
-                  pageNumber: 3,
-                  selectedPage: _selectedPage,
-                  onTap: () {
-                    changePage(3);
-                  },
-                ),
+              TabButton(
+                label: "Screen controls",
+                color: Colors.grey,
+                secondaryColor: Colors.green,
+                pageNumber: 2,
+                selectedPage: _selectedPage,
+                onTap: () {
+                  changePage(2);
+                },
+              ),
 
-                TabButton(
-                  label: "Settings",
-                  pageNumber: 4,
-                  selectedPage: _selectedPage,
-                  onTap: () {
-                    changePage(4);
-                  },
-                ),
-                
-                Button(label: 'System shutdown', secondaryLabel: 'System startup', color: Colors.redAccent, secondaryColor: Colors.greenAccent,),
-              ],
-            ),
+              TabButton(
+                label: "Room light control",
+                color: Colors.grey,
+                secondaryColor: Colors.green,
+                pageNumber: 3,
+                selectedPage: _selectedPage,
+                onTap: () {
+                  changePage(3);
+                },
+              ),
+
+              TabButton(
+                label: "Settings",
+                color: Colors.grey,
+                secondaryColor: Colors.green,
+                pageNumber: 4,
+                selectedPage: _selectedPage,
+                onTap: () {
+                  changePage(4);
+                },
+              ),
+
+              const Button(
+                label: 'System shutdown',
+                secondaryLabel: 'System startup',
+                color: Colors.redAccent,
+                secondaryColor: Colors.greenAccent,
+              ),
+            ],
           ),
 
-          Container( // Container for the buttons view
-            width: 700,
+          Flexible(
+            fit: FlexFit.tight,
             child: PageView(
-              onPageChanged: (int page){
+              onPageChanged: (int page) {
                 setState(() {
                   _selectedPage = page;
                 });
               },
               controller: _pageController,
-              children: [
-                Container(
-                  child: Center(
-                    child: Text("Page 1"),
-                  ),
-                ),
-                
-                Container(
-                  child: Center(
-                    child: Text("Page 2"),
-                  ),
-                ),
-
-                Container(
-                  child: Center(
-                    child: Text("Page 3"),
-                  ),
-                ),
-
-                Container(
-                  child: Center(
-                    child: Text("Page 4"),
-                  ),
-                ),
-
-                Container(
-                  child: Center(
-                    child: Text("Page 5"),
-                  ),
-                ),
+              children: const [
+                HomeSection(),
+                ProjectorSection(),
+                ScreenSection(),
+                RoomLightSection(),
+                SettingsSection(),
               ],
-            ) 
+            ),
           ),
         ],
       ),
-
     );
   }
 }
@@ -145,7 +132,7 @@ class MainSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Flexible(
-      
+
       fit: FlexFit.tight,
       child: PageView(
 
@@ -155,7 +142,7 @@ class MainSection extends StatelessWidget {
               child: Text("Page 1"),
             ),
           ),
-          
+
           Container(
             child: Center(
               child: Text("Page 2"),
