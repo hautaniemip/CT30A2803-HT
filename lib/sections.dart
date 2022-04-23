@@ -10,11 +10,11 @@ class MenuSection extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: const [
-        Button(label: 'Projector Controls', color: Colors.grey, secondaryColor: Colors.lightGreen,),
-        Button(label: 'Screen controls', color: Colors.grey, secondaryColor: Colors.lightGreen,),
-        Button(label: 'Room light control', color: Colors.grey, secondaryColor: Colors.lightGreen,),
-        Button(label: 'Source', color: Colors.grey, secondaryColor: Colors.lightGreen,),
-        Button(label: 'Settings', color: Colors.grey, secondaryColor: Colors.lightGreen,),
+        TabButton(label: 'Projector Controls', color: Colors.grey, secondaryColor: Colors.lightGreen,),
+        TabButton(label: 'Screen controls', color: Colors.grey, secondaryColor: Colors.lightGreen,),
+        TabButton(label: 'Room light control', color: Colors.grey, secondaryColor: Colors.lightGreen,),
+        TabButton(label: 'Source', color: Colors.grey, secondaryColor: Colors.lightGreen,),
+        TabButton(label: 'Settings', color: Colors.grey, secondaryColor: Colors.lightGreen,),
         Padding(padding: EdgeInsets.all(16)),
         Button(label: 'System shutdown', secondaryLabel: 'System startup', color: Colors.redAccent, secondaryColor: Colors.greenAccent,),
       ],
