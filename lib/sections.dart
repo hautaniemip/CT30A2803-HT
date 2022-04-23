@@ -2,22 +2,139 @@ import 'package:flutter/material.dart';
 
 import 'widgets.dart';
 
-class MenuSection extends StatelessWidget {
-  const MenuSection({Key? key}) : super(key: key);
+class CustomMainSection extends StatefulWidget {
+  @override
+  MenuSection createState() => MenuSection();
+}
+
+class MenuSection extends State<CustomMainSection> {
+  int _selectedPage = 0;
+  PageController _pageController= PageController();
+
+  void changePage(int pageNum){
+    setState(() {
+        _selectedPage = pageNum;
+        _pageController.animateToPage(pageNum,
+        duration: Duration(milliseconds: 500),
+        curve: Curves.fastLinearToSlowEaseIn
+        );
+
+    });
+  }
+
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: const [
-        TabButton(label: 'Projector Controls', color: Colors.grey, secondaryColor: Colors.lightGreen,),
-        TabButton(label: 'Screen controls', color: Colors.grey, secondaryColor: Colors.lightGreen,),
-        TabButton(label: 'Room light control', color: Colors.grey, secondaryColor: Colors.lightGreen,),
-        TabButton(label: 'Source', color: Colors.grey, secondaryColor: Colors.lightGreen,),
-        TabButton(label: 'Settings', color: Colors.grey, secondaryColor: Colors.lightGreen,),
-        Padding(padding: EdgeInsets.all(16)),
-        Button(label: 'System shutdown', secondaryLabel: 'System startup', color: Colors.redAccent, secondaryColor: Colors.greenAccent,),
-      ],
+    return Container(
+      child: Row(
+        
+        children: [
+          Container( //Container for MenuButtons
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                TabButton(
+                  label: "HomePage",
+                  pageNumber: 0,
+                  selectedPage: _selectedPage,
+                   onTap: () {
+                    changePage(0);
+                  },
+                
+                ),
+
+                TabButton(
+                  label: "Projector Controls",
+                  pageNumber: 1,
+                  selectedPage: _selectedPage,
+                  onTap: () {
+                    changePage(1);
+                  },
+                ),
+
+                TabButton(
+                  label: "Screen controls",
+                  pageNumber: 2,
+                  selectedPage: _selectedPage,
+                  onTap: () {
+                    changePage(2);
+                  },
+                ),
+
+                TabButton(
+                  label: "Room light control",
+                  pageNumber: 3,
+                  selectedPage: _selectedPage,
+                  onTap: () {
+                    changePage(3);
+                  },
+                ),
+
+                TabButton(
+                  label: "Settings",
+                  pageNumber: 4,
+                  selectedPage: _selectedPage,
+                  onTap: () {
+                    changePage(4);
+                  },
+                ),
+                
+                Button(label: 'System shutdown', secondaryLabel: 'System startup', color: Colors.redAccent, secondaryColor: Colors.greenAccent,),
+              ],
+            ),
+          ),
+
+          Container( // Container for the buttons view
+            width: 700,
+            child: PageView(
+              onPageChanged: (int page){
+                setState(() {
+                  _selectedPage = page;
+                });
+              },
+              controller: _pageController,
+              children: [
+                Container(
+                  child: Center(
+                    child: Text("Page 1"),
+                  ),
+                ),
+                
+                Container(
+                  child: Center(
+                    child: Text("Page 2"),
+                  ),
+                ),
+
+                Container(
+                  child: Center(
+                    child: Text("Page 3"),
+                  ),
+                ),
+
+                Container(
+                  child: Center(
+                    child: Text("Page 4"),
+                  ),
+                ),
+
+                Container(
+                  child: Center(
+                    child: Text("Page 5"),
+                  ),
+                ),
+              ],
+            ) 
+          ),
+        ],
+      ),
+
     );
   }
 }
@@ -28,16 +145,28 @@ class MainSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Flexible(
+      
       fit: FlexFit.tight,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          HomeSection(),
+      child: PageView(
+
+        children: [
+          Container(
+            child: Center(
+              child: Text("Page 1"),
+            ),
+          ),
+          
+          Container(
+            child: Center(
+              child: Text("Page 2"),
+            ),
+          ),
         ],
       ),
     );
   }
 }
+
 
 class HomeSection extends StatelessWidget {
   const HomeSection({Key? key}) : super(key: key);
@@ -254,3 +383,44 @@ class SettingsSection extends StatelessWidget {
     );
   }
 }
+/*
+class TabButton extends StatelessWidget {
+  final String? text;
+  final int? selectedPage;
+  final int? pageNumber;
+  final VoidCallback? onPressed;
+  TabButton({this.text, this.selectedPage, this.pageNumber, this.onPressed});
+
+  
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onPressed,
+      child:Container(
+        width: 150,
+        height: 150,
+        decoration: BoxDecoration(
+          color: selectedPage == pageNumber ? Colors.blue : Color.fromARGB(255, 166, 166, 166),
+          borderRadius: BorderRadius.circular(4.0)
+
+        ),
+
+        padding: EdgeInsets.symmetric(
+
+          vertical: 25,
+          horizontal: 25,
+        ),
+        
+
+        child: Text(
+          text ?? "Tab Button",
+          style: TextStyle(
+            color: selectedPage == pageNumber ? Colors.black : Colors.black,
+          ),
+        ),
+
+
+      ),
+    );
+  }
+}*/
