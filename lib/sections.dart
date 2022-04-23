@@ -3,19 +3,21 @@ import 'package:flutter/material.dart';
 import 'widgets.dart';
 
 class CustomMainSection extends StatefulWidget {
+  const CustomMainSection({Key? key}) : super(key: key);
+
   @override
   MenuSection createState() => MenuSection();
 }
 
 class MenuSection extends State<CustomMainSection> {
   int _selectedPage = 0;
-  PageController _pageController= PageController();
+  final PageController _pageController= PageController();
 
   void changePage(int pageNum){
     setState(() {
         _selectedPage = pageNum;
         _pageController.animateToPage(pageNum,
-        duration: Duration(milliseconds: 500),
+        duration: const Duration(milliseconds: 500),
         curve: Curves.fastLinearToSlowEaseIn
         );
 
@@ -93,6 +95,8 @@ class MenuSection extends State<CustomMainSection> {
                 },
               ),
 
+              const Padding(padding: EdgeInsets.all(16)),
+
               const Button(
                 label: 'System shutdown',
                 secondaryLabel: 'System startup',
@@ -125,35 +129,6 @@ class MenuSection extends State<CustomMainSection> {
     );
   }
 }
-
-class MainSection extends StatelessWidget {
-  const MainSection({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Flexible(
-
-      fit: FlexFit.tight,
-      child: PageView(
-
-        children: [
-          Container(
-            child: Center(
-              child: Text("Page 1"),
-            ),
-          ),
-
-          Container(
-            child: Center(
-              child: Text("Page 2"),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
 
 class HomeSection extends StatelessWidget {
   const HomeSection({Key? key}) : super(key: key);

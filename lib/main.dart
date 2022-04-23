@@ -21,9 +21,9 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('CT30A2803 LPR Group 6'),
         ),
+
         body: Row(
-          children:[
-            
+          children: const [
             CustomMainSection(),
           ],
         )
