@@ -61,16 +61,20 @@ class HomeSection extends StatelessWidget {
             fontSize: 40,
           ),
         ),
-        Container(
-          width: 960,
-          height: 540,
-          color: Colors.black,
-          child: const Center(
-            child: Text(
-              'NO SIGNAL',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
+        Padding(
+          padding: const EdgeInsets.all(32),
+          child: AspectRatio(
+            aspectRatio: 1.777,
+            child: Container(
+            color: Colors.black,
+              child: const Center(
+                child: Text(
+                  'NO SIGNAL',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ),
           ),
@@ -167,16 +171,16 @@ class RoomLightSection extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
                 Button(label: 'Dim', color: Colors.grey,),
-                Button(label: 'Dimmest', color: Colors.grey,),
+                Button(label: 'Full OFF', color: Colors.grey,),
               ],
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
                 Button(label: 'Bright', color: Colors.grey,),
-                Button(label: 'Brightest', color: Colors.grey,),
+                Button(label: 'Full ON', color: Colors.grey,),
               ],
-            )
+            ),
           ],
         ),
       ],

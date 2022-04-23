@@ -78,7 +78,7 @@ class ButtonState extends State<Button> {
 class TabButton extends StatelessWidget {
   const TabButton({
     Key? key,
-    this.label = 'Tab Button',
+    this.label = '',
     this.secondaryLabel,
     this.icon,
     this.width = 100,
