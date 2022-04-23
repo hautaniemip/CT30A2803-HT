@@ -40,7 +40,7 @@ class MenuSection extends State<CustomMainSection> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               TabButton(
-                label: "HomePage",
+                label: "Home Page",
                 color: Colors.grey,
                 secondaryColor: Colors.green,
                 pageNumber: 0,
@@ -48,7 +48,6 @@ class MenuSection extends State<CustomMainSection> {
                  onTap: () {
                   changePage(0);
                 },
-
               ),
 
               TabButton(
@@ -73,8 +72,9 @@ class MenuSection extends State<CustomMainSection> {
                 },
               ),
 
+
               TabButton(
-                label: "Room light control",
+                label: "Input Source",
                 color: Colors.grey,
                 secondaryColor: Colors.green,
                 pageNumber: 3,
@@ -85,7 +85,7 @@ class MenuSection extends State<CustomMainSection> {
               ),
 
               TabButton(
-                label: "Settings",
+                label: "Room light control",
                 color: Colors.grey,
                 secondaryColor: Colors.green,
                 pageNumber: 4,
@@ -95,14 +95,25 @@ class MenuSection extends State<CustomMainSection> {
                 },
               ),
 
-              const Padding(padding: EdgeInsets.all(16)),
+              TabButton(
+                label: "Settings",
+                color: Colors.grey,
+                secondaryColor: Colors.green,
+                pageNumber: 5,
+                selectedPage: _selectedPage,
+                onTap: () {
+                  changePage(5);
+                },
+              ),
 
+              const Spacer(),
               const Button(
                 label: 'System shutdown',
                 secondaryLabel: 'System startup',
                 color: Colors.redAccent,
                 secondaryColor: Colors.greenAccent,
               ),
+              const Padding(padding: EdgeInsets.all(16)),
             ],
           ),
 
@@ -119,6 +130,7 @@ class MenuSection extends State<CustomMainSection> {
                 HomeSection(),
                 ProjectorSection(),
                 ScreenSection(),
+                SourceSection(),
                 RoomLightSection(),
                 SettingsSection(),
               ],
@@ -170,6 +182,10 @@ class HomeSection extends StatelessWidget {
             ),
           ),
         ),
+        const Button(
+          label: 'Freeze',
+          color: Colors.grey,
+        )
       ],
     );
   }
@@ -344,49 +360,8 @@ class SettingsSection extends StatelessWidget {
             Text('Dark mode'),
             DarkModeSwitch(),
           ],
-        )
+        ),
       ],
     );
   }
 }
-/*
-class TabButton extends StatelessWidget {
-  final String? text;
-  final int? selectedPage;
-  final int? pageNumber;
-  final VoidCallback? onPressed;
-  TabButton({this.text, this.selectedPage, this.pageNumber, this.onPressed});
-
-  
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onPressed,
-      child:Container(
-        width: 150,
-        height: 150,
-        decoration: BoxDecoration(
-          color: selectedPage == pageNumber ? Colors.blue : Color.fromARGB(255, 166, 166, 166),
-          borderRadius: BorderRadius.circular(4.0)
-
-        ),
-
-        padding: EdgeInsets.symmetric(
-
-          vertical: 25,
-          horizontal: 25,
-        ),
-        
-
-        child: Text(
-          text ?? "Tab Button",
-          style: TextStyle(
-            color: selectedPage == pageNumber ? Colors.black : Colors.black,
-          ),
-        ),
-
-
-      ),
-    );
-  }
-}*/

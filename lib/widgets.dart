@@ -9,7 +9,7 @@ class Button extends StatefulWidget {
     this.secondaryLabel,
     this.icon,
     this.width = 100,
-    this.height = 100,
+    this.height = 75,
     this.padding = 16,
     this.color = Colors.white10,
     this.secondaryColor,
@@ -84,7 +84,7 @@ class TabButton extends StatelessWidget {
     this.secondaryLabel,
     this.icon,
     this.width = 100,
-    this.height = 100,
+    this.height = 75,
     this.padding = 16,
     this.color = Colors.white10,
     this.secondaryColor,
@@ -234,44 +234,3 @@ class DarkModeSwitchState extends State<DarkModeSwitch> {
     );
   }
 }
-/*
-class TabButton extends StatelessWidget {
-  final String? text;
-  final int? selectedPage;
-  final int? pageNumber;
-  final VoidCallback? onPressed;
-  TabButton({this.text, this.selectedPage, this.pageNumber, this.onPressed});
-
-  
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onPressed,
-      child:Container(
-        width: 150,
-        height: 150,
-        decoration: BoxDecoration(
-          color: selectedPage == pageNumber ? Colors.blue : Color.fromARGB(255, 166, 166, 166),
-          borderRadius: BorderRadius.circular(4.0)
-
-        ),
-
-        padding: EdgeInsets.symmetric(
-          
-          vertical: 25,
-          horizontal: 25,
-        ),
-        
-
-        child: Text(
-          text ?? "Tab Button",
-          style: TextStyle(
-            color: selectedPage == pageNumber ? Colors.black : Colors.black,
-          ),
-        ),
-
-
-      ),
-    );
-  }
-}*/
