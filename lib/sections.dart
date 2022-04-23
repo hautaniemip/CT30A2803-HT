@@ -171,7 +171,10 @@ class HomeSection extends StatelessWidget {
             child: AspectRatio(
               aspectRatio: 16 / 9,
               child: Container(
-                color: Colors.black,
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  border: Border.all(color: Colors.white, width: 2,),
+                ),
                 child: const Center(
                   child: Text(
                     'NO SIGNAL',
