@@ -11,6 +11,7 @@ class Button extends StatefulWidget {
     this.padding = 16,
     this.color = Colors.white10,
     this.secondaryColor,
+    this.borderRadius = 20,
     this.onTap,
   }) : super(key: key);
 
@@ -22,6 +23,7 @@ class Button extends StatefulWidget {
   final double padding;
   final Color color;
   final Color? secondaryColor;
+  final double borderRadius;
   final ValueChanged<bool>? onTap;
 
   @override
@@ -45,11 +47,15 @@ class ButtonState extends State<Button> {
     return Padding(
       padding: EdgeInsets.all(widget.padding),
       child: InkWell(
+        borderRadius: BorderRadius.all(Radius.circular(widget.borderRadius)),
         onTap: handleTap,
         child: Ink(
-          color: active ? widget.color : (widget.secondaryColor ?? widget.color),
           width: widget.width,
           height: widget.height,
+          decoration: BoxDecoration(
+              color: active ? widget.color : (widget.secondaryColor ?? widget.color),
+            borderRadius: BorderRadius.all(Radius.circular(widget.borderRadius)),
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
