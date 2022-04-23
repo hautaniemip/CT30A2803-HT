@@ -166,16 +166,19 @@ class HomeSection extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.all(32),
-          child: AspectRatio(
-            aspectRatio: 1.777,
-            child: Container(
-            color: Colors.black,
-              child: const Center(
-                child: Text(
-                  'NO SIGNAL',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
+          child: Container(
+            constraints: const BoxConstraints(maxWidth: 1000),
+            child: AspectRatio(
+              aspectRatio: 16 / 9,
+              child: Container(
+                color: Colors.black,
+                child: const Center(
+                  child: Text(
+                    'NO SIGNAL',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
@@ -185,7 +188,7 @@ class HomeSection extends StatelessWidget {
         const Button(
           label: 'Freeze',
           color: Colors.grey,
-        )
+        ),
       ],
     );
   }
