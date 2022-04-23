@@ -22,9 +22,9 @@ class MyApp extends StatelessWidget {
           title: const Text('CT30A2803 LPR Group 6'),
         ),
         body: Row(
-          children: const [
-            MenuSection(),
-            MainSection(),
+          children:[
+            
+            CustomMainSection(),
           ],
         )
       ),
