@@ -53,7 +53,7 @@ class ButtonState extends State<Button> {
           width: widget.width,
           height: widget.height,
           decoration: BoxDecoration(
-              color: active ? widget.color : (widget.secondaryColor ?? widget.color),
+            color: active ? widget.color : (widget.secondaryColor ?? widget.color),
             borderRadius: BorderRadius.all(Radius.circular(widget.borderRadius)),
           ),
           child: Column(
@@ -65,6 +65,70 @@ class ButtonState extends State<Button> {
               if (widget.label != '')
                 Text(
                   active ? widget.label : (widget.secondaryLabel ?? widget.label),
+                  textAlign: TextAlign.center,
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class TabButton extends StatelessWidget {
+  const TabButton({
+    Key? key,
+    this.label = 'Tab Button',
+    this.secondaryLabel,
+    this.icon,
+    this.width = 100,
+    this.height = 100,
+    this.padding = 16,
+    this.color = Colors.white10,
+    this.secondaryColor,
+    this.borderRadius = 20,
+    this.onTap,
+    this.selectedPage,
+    this.pageNumber,
+  }) : super(key: key);
+
+  final String label;
+  final String? secondaryLabel;
+  final IconData? icon;
+  final double width;
+  final double height;
+  final double padding;
+  final Color color;
+  final Color? secondaryColor;
+  final double borderRadius;
+  final VoidCallback? onTap;
+
+  final int? selectedPage;
+  final int? pageNumber;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(padding),
+      child: InkWell(
+        borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
+        onTap: onTap,
+        child: Ink(
+          width: width,
+          height: height,
+          decoration: BoxDecoration(
+            color: selectedPage == pageNumber ? color : secondaryColor,
+            borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children:  [
+              if (icon != null)
+                Icon(icon),
+              if (label != '')
+                Text(
+                  selectedPage == pageNumber ? label : (secondaryLabel ?? label),
                   textAlign: TextAlign.center,
                 ),
             ],
