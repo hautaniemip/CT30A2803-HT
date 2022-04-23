@@ -222,11 +222,11 @@ class DarkModeSwitch extends StatefulWidget {
 }
 
 class DarkModeSwitchState extends State<DarkModeSwitch> {
-  bool value = false;
 
   @override
   Widget build(BuildContext context) {
     final themeChange = Provider.of<DarkThemeProvider>(context);
+    bool value = themeChange.darkTheme;
     return Switch(
       value: value,
       onChanged: (bool newValue) {
