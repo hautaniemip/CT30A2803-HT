@@ -41,8 +41,8 @@ class MenuSection extends State<CustomMainSection> {
             children: [
               TabButton(
                 label: "Home Page",
-                color: Colors.grey,
-                secondaryColor: Colors.green,
+                color: Colors.green,
+                secondaryColor: Colors.grey,
                 pageNumber: 0,
                 selectedPage: _selectedPage,
                  onTap: () {
@@ -52,8 +52,8 @@ class MenuSection extends State<CustomMainSection> {
 
               TabButton(
                 label: "Projector Controls",
-                color: Colors.grey,
-                secondaryColor: Colors.green,
+                color: Colors.green,
+                secondaryColor: Colors.grey,
                 pageNumber: 1,
                 selectedPage: _selectedPage,
                 onTap: () {
@@ -63,8 +63,8 @@ class MenuSection extends State<CustomMainSection> {
 
               TabButton(
                 label: "Screen controls",
-                color: Colors.grey,
-                secondaryColor: Colors.green,
+                color: Colors.green,
+                secondaryColor: Colors.grey,
                 pageNumber: 2,
                 selectedPage: _selectedPage,
                 onTap: () {
@@ -75,8 +75,8 @@ class MenuSection extends State<CustomMainSection> {
 
               TabButton(
                 label: "Input Source",
-                color: Colors.grey,
-                secondaryColor: Colors.green,
+                color: Colors.green,
+                secondaryColor: Colors.grey,
                 pageNumber: 3,
                 selectedPage: _selectedPage,
                 onTap: () {
@@ -86,8 +86,8 @@ class MenuSection extends State<CustomMainSection> {
 
               TabButton(
                 label: "Room light control",
-                color: Colors.grey,
-                secondaryColor: Colors.green,
+                color: Colors.green,
+                secondaryColor: Colors.grey,
                 pageNumber: 4,
                 selectedPage: _selectedPage,
                 onTap: () {
@@ -97,8 +97,8 @@ class MenuSection extends State<CustomMainSection> {
 
               TabButton(
                 label: "Settings",
-                color: Colors.grey,
-                secondaryColor: Colors.green,
+                color: Colors.green,
+                secondaryColor: Colors.grey,
                 pageNumber: 5,
                 selectedPage: _selectedPage,
                 onTap: () {

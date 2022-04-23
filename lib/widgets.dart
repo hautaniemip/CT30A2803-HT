@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ht/preference.dart';
+import 'package:provider/provider.dart';
 
 
 
@@ -224,11 +226,13 @@ class DarkModeSwitchState extends State<DarkModeSwitch> {
 
   @override
   Widget build(BuildContext context) {
+    final themeChange = Provider.of<DarkThemeProvider>(context);
     return Switch(
       value: value,
       onChanged: (bool newValue) {
         setState(() {
           value = newValue;
+          themeChange.darkTheme = value;
         });
       },
     );
