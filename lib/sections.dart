@@ -189,7 +189,8 @@ class HomeSection extends StatelessWidget {
           ),
         ),
         const Button(
-          label: 'Freeze',
+          label: 'UNFREEZE',
+          secondaryLabel: "FREEZE",
           color: Colors.grey,
         ),
       ],
@@ -307,6 +308,7 @@ class SourceSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text(
           'Source',
