@@ -13,8 +13,8 @@ class Styles {
 
       hintColor: isDarkTheme ? const Color(0xff280C0B) : const Color(0xffEECED3),
 
-      highlightColor: isDarkTheme ? const Color(0xff372901) : const Color(0xffFCE192),
-      hoverColor: isDarkTheme ? const Color(0xb23a3a3b) : const Color(0xb34285f4),
+      highlightColor: isDarkTheme ? const Color(0x99372901) : const Color(0x99fce192),
+      hoverColor: isDarkTheme ? const Color(0x99525252) : const Color(0x99A8A8A8),
 
       focusColor: isDarkTheme ? const Color(0xff0B2512) : const Color(0xffA8DAB5),
       disabledColor: Colors.grey,
