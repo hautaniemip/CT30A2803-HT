@@ -11,6 +11,12 @@ CT30A2803 User Interfaces and Usability kurssin harjoitustyö LPR ryhmä 6
     cd CT30A2803-HT-final
     flutter run --release -d chrome
 
+tai
+
+    unzip CT30A2803-HT-final.zip
+    cd CT30A2803-HT-final
+    flutter run --release -d chrome 
+
 ### Windows
 
 1. Pura zip-tiedosto
@@ -31,6 +37,12 @@ CT30A2803 User Interfaces and Usability course final project for LPR Group 6
     tar -xvf CT30A2803-HT-final.tar.gz
     cd CT30A2803-HT-final
     flutter run --release -d chrome
+
+or
+
+    unzip CT30A2803-HT-final.zip
+    cd CT30A2803-HT-final
+    flutter run --release -d chrome 
 
 ### Windows
 
