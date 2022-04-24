@@ -99,8 +99,7 @@ class MenuSection extends State<CustomMainSection> {
               ),
               const Spacer(),
               const Button(
-                label: 'System shutdown',
-                secondaryLabel: 'System startup',
+                icon: Icons.power_settings_new,
                 color: Colors.redAccent,
                 secondaryColor: Colors.greenAccent,
               ),
@@ -418,7 +417,10 @@ class SettingsSection extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
-              Text('Default source'),
+              Text(
+                'Default source',
+                style: TextStyle(fontSize: 24),
+              ),
               Dropdown(
                 items: <String>['HDMI', 'DP', 'VGA', 'Share Screen'],
               ),
@@ -430,7 +432,10 @@ class SettingsSection extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
-              Text('Default light mode'),
+              Text(
+                'Default light mode',
+                style: TextStyle(fontSize: 24),
+              ),
               Dropdown(
                 items: <String>['Full OFF', 'Dim', 'Bright', 'Full ON'],
               ),
@@ -442,7 +447,10 @@ class SettingsSection extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
-              Text('Dark mode'),
+              Text(
+                'Dark mode',
+                style: TextStyle(fontSize: 24),
+              ),
               DarkModeSwitch(),
             ],
           ),
