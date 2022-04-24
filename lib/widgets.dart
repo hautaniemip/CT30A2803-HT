@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ht/preference.dart';
 import 'package:provider/provider.dart';
 
+
+
 class Button extends StatefulWidget {
   const Button({
     Key? key,
@@ -55,21 +57,18 @@ class ButtonState extends State<Button> {
           width: widget.width,
           height: widget.height,
           decoration: BoxDecoration(
-            color:
-                active ? widget.color : (widget.secondaryColor ?? widget.color),
-            borderRadius:
-                BorderRadius.all(Radius.circular(widget.borderRadius)),
+            color: active ? widget.color : (widget.secondaryColor ?? widget.color),
+            borderRadius: BorderRadius.all(Radius.circular(widget.borderRadius)),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              if (widget.icon != null) Icon(widget.icon),
+            children:  [
+              if (widget.icon != null)
+                Icon(widget.icon),
               if (widget.label != '')
                 Text(
-                  active
-                      ? widget.label
-                      : (widget.secondaryLabel ?? widget.label),
+                  active ? widget.label : (widget.secondaryLabel ?? widget.label),
                   textAlign: TextAlign.center,
                 ),
             ],
@@ -128,13 +127,12 @@ class TabButton extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              if (icon != null) Icon(icon),
+            children:  [
+              if (icon != null)
+                Icon(icon),
               if (label != '')
                 Text(
-                  selectedPage == pageNumber
-                      ? label
-                      : (secondaryLabel ?? label),
+                  selectedPage == pageNumber ? label : (secondaryLabel ?? label),
                   textAlign: TextAlign.center,
                 ),
             ],
@@ -144,6 +142,7 @@ class TabButton extends StatelessWidget {
     );
   }
 }
+
 
 class LightSlider extends StatefulWidget {
   const LightSlider({Key? key}) : super(key: key);
@@ -200,7 +199,8 @@ class DropdownState extends State<Dropdown> {
           dropdownValue = newValue!;
         });
       },
-      items: widget.items.map<DropdownMenuItem<String>>((String value) {
+      items: widget.items
+          .map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
           value: value,
           child: Text(value),
@@ -218,6 +218,7 @@ class DarkModeSwitch extends StatefulWidget {
 }
 
 class DarkModeSwitchState extends State<DarkModeSwitch> {
+
   @override
   Widget build(BuildContext context) {
     final themeChange = Provider.of<DarkThemeProvider>(context);
