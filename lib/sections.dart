@@ -413,7 +413,7 @@ class SettingsSection extends StatelessWidget {
         ),
         const Padding(padding: EdgeInsets.all(32)),
         SizedBox(
-          width: 300,
+          width: 400,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
@@ -428,7 +428,7 @@ class SettingsSection extends StatelessWidget {
           ),
         ),
         SizedBox(
-          width: 300,
+          width: 400,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
@@ -443,7 +443,7 @@ class SettingsSection extends StatelessWidget {
           ),
         ),
         SizedBox(
-          width: 300,
+          width: 400,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [

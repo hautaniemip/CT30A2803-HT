@@ -70,8 +70,9 @@ class ButtonState extends State<Button> {
                 Text(
                   active ? widget.label : (widget.secondaryLabel ?? widget.label),
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-  	                fontWeight: FontWeight.bold,
+                  style: const TextStyle(
+                    fontSize: 20,
+  	                fontWeight: FontWeight.w700,
                   ),
                 ),
             ],
@@ -137,8 +138,9 @@ class TabButton extends StatelessWidget {
                 Text(
                   selectedPage == pageNumber ? label : (secondaryLabel ?? label),
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-  	                fontWeight: FontWeight.bold,
+                  style: const TextStyle(
+                    fontSize: 20,
+  	                fontWeight: FontWeight.w700,
                   ),
                 ),
             ],
@@ -209,7 +211,12 @@ class DropdownState extends State<Dropdown> {
           .map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
           value: value,
-          child: Text(value),
+          child: Text(
+            value,
+            style: const TextStyle(
+              fontSize: 24,
+            ),
+          ),
         );
       }).toList(),
     );
