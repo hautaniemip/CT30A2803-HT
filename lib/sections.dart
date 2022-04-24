@@ -362,7 +362,7 @@ class SettingsSection extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: const [
             Text('Default light mode'),
-            Dropdown(items: <String>['Dimmest', 'Dim', 'Bright', 'Brightest'],),
+            Dropdown(items: <String>['Full OFF', 'Dim', 'Bright', 'Full ON'],),
           ],
         ),
         Row(
