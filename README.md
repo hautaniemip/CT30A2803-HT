@@ -13,10 +13,10 @@ CT30A2803 User Interfaces and Usability kurssin harjoitustyö LPR ryhmä 6
 
 ### Windows
 
-    1. Pura zip-tiedosto
-    2. Vaihda purettuun kansioon
-    3. Run:
-        flutter run --release -d chrome
+1. Pura zip-tiedosto
+2. Vaihda purettuun kansioon
+3. Suorita:
+    flutter run --release -d chrome
 
 
 
@@ -35,7 +35,7 @@ CT30A2803 User Interfaces and Usability course final project for LPR Group 6
 
 ### Windows
 
-    1. Extract the zip
-    2. Change to extracted directory
-    3. Run:
-        flutter run --release -d chrome
+1. Extract the zip
+2. Change to extracted directory
+3. Run:
+    flutter run --release -d chrome
