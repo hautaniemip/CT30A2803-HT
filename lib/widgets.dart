@@ -194,10 +194,6 @@ class DropdownState extends State<Dropdown> {
       value: dropdownValue,
       icon: const Icon(Icons.arrow_drop_down),
       elevation: 16,
-      underline: Container(
-        height: 2,
-        color: Colors.black,
-      ),
       onChanged: (String? newValue) {
         setState(() {
           dropdownValue = newValue!;
