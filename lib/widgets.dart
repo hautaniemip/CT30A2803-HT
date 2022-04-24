@@ -71,6 +71,9 @@ class ButtonState extends State<Button> {
                       ? widget.label
                       : (widget.secondaryLabel ?? widget.label),
                   textAlign: TextAlign.center,
+                  style: TextStyle(
+  	                fontWeight: FontWeight.bold,
+                  ),
                 ),
             ],
           ),
@@ -136,6 +139,9 @@ class TabButton extends StatelessWidget {
                       ? label
                       : (secondaryLabel ?? label),
                   textAlign: TextAlign.center,
+                  style: TextStyle(
+  	                fontWeight: FontWeight.bold,
+                  ),
                 ),
             ],
           ),
