@@ -191,7 +191,9 @@ class HomeSection extends StatelessWidget {
         const Button(
           label: 'UNFREEZE',
           secondaryLabel: "FREEZE",
-          color: Colors.grey,
+          color: Colors.blue,
+          secondaryColor: Colors.grey,
+          
         ),
       ],
     );
@@ -247,6 +249,7 @@ class ScreenSection extends StatelessWidget {
           'Screen Controls',
           style: TextStyle(
             fontSize: 60,
+            
           ),
         ),
         Button(icon: Icons.keyboard_arrow_up, color: Colors.grey,),
