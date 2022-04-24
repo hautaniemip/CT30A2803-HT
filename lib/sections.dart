@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets.dart';
@@ -205,6 +206,7 @@ class ProjectorSection extends StatelessWidget {
             fontSize: 60,
           ),
         ),
+        const Padding(padding: EdgeInsets.all(32)),
         const Button(
           label: 'Projector shutdown',
           secondaryLabel: 'Projector startup',
@@ -268,6 +270,7 @@ class ScreenSection extends StatelessWidget {
             fontSize: 60,
           ),
         ),
+        Padding(padding: EdgeInsets.all(32)),
         Button(
           icon: Icons.keyboard_arrow_up,
           color: Colors.grey,
@@ -299,6 +302,7 @@ class RoomLightSection extends StatelessWidget {
             fontSize: 60,
           ),
         ),
+        const Padding(padding: EdgeInsets.all(32)),
         const Text(
           'Manual control',
           style: TextStyle(
@@ -356,6 +360,7 @@ class SourceSection extends StatelessWidget {
             fontSize: 60,
           ),
         ),
+        const Padding(padding: EdgeInsets.all(32)),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -399,31 +404,48 @@ class SettingsSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
-            Text('Default source'),
-            Dropdown(
-              items: <String>['HDMI', 'DP', 'VGA', 'Share Screen'],
-            ),
-          ],
+        const Text(
+          'Settings',
+          style: TextStyle(
+            fontSize: 60,
+          ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
-            Text('Default light mode'),
-            Dropdown(
-              items: <String>['Full OFF', 'Dim', 'Bright', 'Full ON'],
-            ),
-          ],
+        const Padding(padding: EdgeInsets.all(32)),
+        SizedBox(
+          width: 300,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: const [
+              Text('Default source'),
+              Dropdown(
+                items: <String>['HDMI', 'DP', 'VGA', 'Share Screen'],
+              ),
+            ],
+          ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
-            Text('Dark mode'),
-            DarkModeSwitch(),
-          ],
+        SizedBox(
+          width: 300,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: const [
+              Text('Default light mode'),
+              Dropdown(
+                items: <String>['Full OFF', 'Dim', 'Bright', 'Full ON'],
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          width: 300,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: const [
+              Text('Dark mode'),
+              DarkModeSwitch(),
+            ],
+          ),
         ),
       ],
     );
