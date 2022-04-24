@@ -11,19 +11,16 @@ class CustomMainSection extends StatefulWidget {
 
 class MenuSection extends State<CustomMainSection> {
   int _selectedPage = 0;
-  final PageController _pageController= PageController();
+  final PageController _pageController = PageController();
 
-  void changePage(int pageNum){
+  void changePage(int pageNum) {
     setState(() {
-        _selectedPage = pageNum;
-        _pageController.animateToPage(pageNum,
-        duration: const Duration(milliseconds: 500),
-        curve: Curves.fastLinearToSlowEaseIn
-        );
-
+      _selectedPage = pageNum;
+      _pageController.animateToPage(pageNum,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.fastLinearToSlowEaseIn);
     });
   }
-
 
   @override
   void dispose() {
@@ -45,11 +42,10 @@ class MenuSection extends State<CustomMainSection> {
                 secondaryColor: Colors.grey,
                 pageNumber: 0,
                 selectedPage: _selectedPage,
-                 onTap: () {
+                onTap: () {
                   changePage(0);
                 },
               ),
-
               TabButton(
                 label: "Projector Controls",
                 color: Colors.green,
@@ -60,7 +56,6 @@ class MenuSection extends State<CustomMainSection> {
                   changePage(1);
                 },
               ),
-
               TabButton(
                 label: "Screen controls",
                 color: Colors.green,
@@ -71,8 +66,6 @@ class MenuSection extends State<CustomMainSection> {
                   changePage(2);
                 },
               ),
-
-
               TabButton(
                 label: "Input Source",
                 color: Colors.green,
@@ -83,7 +76,6 @@ class MenuSection extends State<CustomMainSection> {
                   changePage(3);
                 },
               ),
-
               TabButton(
                 label: "Room light control",
                 color: Colors.green,
@@ -94,7 +86,6 @@ class MenuSection extends State<CustomMainSection> {
                   changePage(4);
                 },
               ),
-
               TabButton(
                 label: "Settings",
                 color: Colors.green,
@@ -105,7 +96,6 @@ class MenuSection extends State<CustomMainSection> {
                   changePage(5);
                 },
               ),
-
               const Spacer(),
               const Button(
                 label: 'System shutdown',
@@ -116,7 +106,6 @@ class MenuSection extends State<CustomMainSection> {
               const Padding(padding: EdgeInsets.all(16)),
             ],
           ),
-
           Flexible(
             fit: FlexFit.tight,
             child: PageView(
@@ -173,7 +162,10 @@ class HomeSection extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.black,
-                  border: Border.all(color: Colors.white, width: 2,),
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 2,
+                  ),
                 ),
                 child: const Center(
                   child: Text(
@@ -193,7 +185,6 @@ class HomeSection extends StatelessWidget {
           secondaryLabel: "FREEZE",
           color: Colors.blue,
           secondaryColor: Colors.grey,
-          
         ),
       ],
     );
@@ -214,24 +205,50 @@ class ProjectorSection extends StatelessWidget {
             fontSize: 60,
           ),
         ),
-        const Button(label: 'Projector shutdown', secondaryLabel: 'Projector startup', color: Colors.redAccent, secondaryColor: Colors.greenAccent,),
+        const Button(
+          label: 'Projector shutdown',
+          secondaryLabel: 'Projector startup',
+          color: Colors.redAccent,
+          secondaryColor: Colors.greenAccent,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Button(label: 'Source', color: Colors.grey,),
-            Button(icon: Icons.keyboard_arrow_up, color: Colors.grey,),
-            Button(label: 'Menu', color: Colors.grey,),
+            Button(
+              label: 'Source',
+              color: Colors.grey,
+            ),
+            Button(
+              icon: Icons.keyboard_arrow_up,
+              color: Colors.grey,
+            ),
+            Button(
+              label: 'Menu',
+              color: Colors.grey,
+            ),
           ],
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Button(icon: Icons.keyboard_arrow_left, color: Colors.grey,),
-            Button(label: 'Select', color: Colors.grey,),
-            Button(icon: Icons.keyboard_arrow_right, color: Colors.grey,),
+            Button(
+              icon: Icons.keyboard_arrow_left,
+              color: Colors.grey,
+            ),
+            Button(
+              label: 'Select',
+              color: Colors.grey,
+            ),
+            Button(
+              icon: Icons.keyboard_arrow_right,
+              color: Colors.grey,
+            ),
           ],
         ),
-        const Button(icon: Icons.keyboard_arrow_down, color: Colors.grey,),
+        const Button(
+          icon: Icons.keyboard_arrow_down,
+          color: Colors.grey,
+        ),
       ],
     );
   }
@@ -249,12 +266,20 @@ class ScreenSection extends StatelessWidget {
           'Screen Controls',
           style: TextStyle(
             fontSize: 60,
-            
           ),
         ),
-        Button(icon: Icons.keyboard_arrow_up, color: Colors.grey,),
-        Button(label: 'STOP', color: Colors.grey,),
-        Button(icon: Icons.keyboard_arrow_down, color: Colors.grey,),
+        Button(
+          icon: Icons.keyboard_arrow_up,
+          color: Colors.grey,
+        ),
+        Button(
+          label: 'STOP',
+          color: Colors.grey,
+        ),
+        Button(
+          icon: Icons.keyboard_arrow_down,
+          color: Colors.grey,
+        ),
       ],
     );
   }
@@ -287,15 +312,27 @@ class RoomLightSection extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
-                Button(label: 'Dim', color: Colors.grey,),
-                Button(label: 'Full OFF', color: Colors.grey,),
+                Button(
+                  label: 'Dim',
+                  color: Colors.grey,
+                ),
+                Button(
+                  label: 'Full OFF',
+                  color: Colors.grey,
+                ),
               ],
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
-                Button(label: 'Bright', color: Colors.grey,),
-                Button(label: 'Full ON', color: Colors.grey,),
+                Button(
+                  label: 'Bright',
+                  color: Colors.grey,
+                ),
+                Button(
+                  label: 'Full ON',
+                  color: Colors.grey,
+                ),
               ],
             ),
           ],
@@ -325,15 +362,27 @@ class SourceSection extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: const [
-                Button(label: 'HDMI', color: Colors.grey,),
-                Button(label: 'VGA', color: Colors.grey,),
+                Button(
+                  label: 'HDMI',
+                  color: Colors.grey,
+                ),
+                Button(
+                  label: 'VGA',
+                  color: Colors.grey,
+                ),
               ],
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: const [
-                Button(label: 'DP', color: Colors.grey,),
-                Button(label: 'Share Screen', color: Colors.grey,),
+                Button(
+                  label: 'DP',
+                  color: Colors.grey,
+                ),
+                Button(
+                  label: 'Share Screen',
+                  color: Colors.grey,
+                ),
               ],
             ),
           ],
@@ -355,14 +404,18 @@ class SettingsSection extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: const [
             Text('Default source'),
-            Dropdown(items: <String>['HDMI', 'DP', 'VGA', 'Share Screen'],),
+            Dropdown(
+              items: <String>['HDMI', 'DP', 'VGA', 'Share Screen'],
+            ),
           ],
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: const [
             Text('Default light mode'),
-            Dropdown(items: <String>['Full OFF', 'Dim', 'Bright', 'Full ON'],),
+            Dropdown(
+              items: <String>['Full OFF', 'Dim', 'Bright', 'Full ON'],
+            ),
           ],
         ),
         Row(

@@ -26,18 +26,20 @@ class MyAppState extends State<MyApp> {
   }
 
   void getCurrentAppTheme() async {
-    themeProvider.darkTheme = await themeProvider.darkThemePreference.getTheme();
+    themeProvider.darkTheme =
+        await themeProvider.darkThemePreference.getTheme();
   }
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-        providers: [
+      providers: [
         ChangeNotifierProvider(
           create: (_) {
-          return themeProvider;
-        },)
+            return themeProvider;
+          },
+        ),
       ],
       child: Consumer<DarkThemeProvider>(
         builder: (BuildContext context, value, Widget? child) {
@@ -48,7 +50,6 @@ class MyAppState extends State<MyApp> {
               appBar: AppBar(
                 title: const Text('CT30A2803 LPR Group 6'),
               ),
-
               body: Row(
                 children: const [
                   CustomMainSection(),
@@ -61,6 +62,3 @@ class MyAppState extends State<MyApp> {
     );
   }
 }
-
-
-
